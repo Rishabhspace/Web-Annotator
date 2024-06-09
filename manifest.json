@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Webpage Annotator",
+  "version": "1.0",
+  "description": "Annotate webpages with highlights and notes.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "commands": {
+    "highlight": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+H"
+      },
+      "description": "Highlight selected text"
+    },
+    "add-note": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+N"
+      },
+      "description": "Add a note to selected text"
+    }
+  }
+}

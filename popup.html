@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Webpage Annotator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+            margin: 0;
+            width: 300px;
+        }
+
+        h1 {
+            font-size: 18px;
+            color: #333;
+            margin: 0 0 20px 0;
+        }
+
+        label {
+            font-size: 14px;
+            color: #666;
+        }
+
+        input[type="color"] {
+            margin: 0 10px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin: 10px 0;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #annotations-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        #annotations-list li {
+            background-color: #fff;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        #annotations-list button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            font-size: 12px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #annotations-list button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Webpage Annotator</h1>
+    <label for="color">Highlight Color:</label>
+    <input type="color" id="color" value="#FFFF00"> <!-- Default to yellow -->
+    <button id="highlight-btn">Highlight</button>
+    <button id="note-btn">Add Note</button>
+    <button id="export-btn">Export Annotations</button>
+    <h2>Annotations</h2>
+    <ul id="annotations-list"></ul>
+    <script src="popup.js"></script>
+</body>
+
+</html>
